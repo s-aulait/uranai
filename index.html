@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>タイトル</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Shippori+Mincho+B1:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Shippori Mincho B1', "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 Pr6 W6", "Hiragino Mincho Pro", "HGS明朝E", "メイリオ", "ＭＳ Ｐ明朝", "MS PMincho", Meiryo, serif;
+        }
+
+        .container {
+            width: 1080px;
+            margin: 100px auto;
+            max-width: 94%;
+
+        }
+
+        .top-fortune_title {
+            text-align: center;
+            font-size: 60px;
+            background: -webkit-linear-gradient(90deg, #D89400, #FFC039, #D89400);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #F8B936;
+            font-weight: 900;
+
+        }
+
+        .top-fortune_text {
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .top-fortune_form {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .top-fortune_submit {
+            text-align: center;
+        }
+
+        .top-fortune_submit button {
+            cursor: pointer;
+            border: none;
+            font-family: 'Shippori Mincho B1', "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 Pr6 W6", "Hiragino Mincho Pro", "HGS明朝E", "メイリオ", "ＭＳ Ｐ明朝", "MS PMincho", Meiryo, serif;
+            background-color: #FFF699;
+
+            font-size: 48px;
+            box-shadow: 0 2px 5px #C24A00;
+            color: #C24A00;
+            padding: 0 100px;
+            border-radius: 2px;
+            transition: all 0.6s;
+            margin-bottom: 80px;
+        }
+
+        .top-fortune_submit button:hover {
+            opacity: 0.6;
+        }
+
+        .top-fortune_adjectives1,
+        .top-fortune_adjectives2 {
+            display: none;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="top-fortune_title">あなたの人生占います。</h2>
+        <p class="top-fortune_text">生年月日を入力してください。</p>
+        <div class="top-fortune_form">
+            <select name="year" id="year">
+                <option value="">年</option>
+                <option value="1900">1900年</option>
+                <option value="1901">1901年</option>
+                <option value="1902">1902年</option>
+                <option value="1903">1903年</option>
+                <option value="1904">1904年</option>
+                <option value="1905">1905年</option>
+                <option value="1906">1906年</option>
+                <option value="1907">1907年</option>
+                <option value="1908">1908年</option>
+                <option value="1909">1909年</option>
+                <option value="1910">1910年</option>
+                <option value="1911">1911年</option>
+                <option value="1912">1912年</option>
+                <option value="1913">1913年</option>
+                <option value="1914">1914年</option>
+                <option value="1915">1915年</option>
+                <option value="1916">1916年</option>
+                <option value="1917">1917年</option>
+                <option value="1918">1918年</option>
+                <option value="1919">1919年</option>
+                <option value="1920">1920年</option>
+                <option value="1921">1921年</option>
+                <option value="1922">1922年</option>
+                <option value="1923">1923年</option>
+                <option value="1924">1924年</option>
+                <option value="1925">1925年</option>
+                <option value="1926">1926年</option>
+                <option value="1927">1927年</option>
+                <option value="1928">1928年</option>
+                <option value="1929">1929年</option>
+                <option value="1930">1930年</option>
+                <option value="1931">1931年</option>
+                <option value="1932">1932年</option>
+                <option value="1933">1933年</option>
+                <option value="1934">1934年</option>
+                <option value="1935">1935年</option>
+                <option value="1936">1936年</option>
+                <option value="1937">1937年</option>
+                <option value="1938">1938年</option>
+                <option value="1939">1939年</option>
+                <option value="1940">1940年</option>
+                <option value="1941">1941年</option>
+                <option value="1942">1942年</option>
+                <option value="1943">1943年</option>
+                <option value="1944">1944年</option>
+                <option value="1945">1945年</option>
+                <option value="1946">1946年</option>
+                <option value="1947">1947年</option>
+                <option value="1948">1948年</option>
+                <option value="1949">1949年</option>
+                <option value="1950">1950年</option>
+                <option value="1951">1951年</option>
+                <option value="1952">1952年</option>
+                <option value="1953">1953年</option>
+                <option value="1954">1954年</option>
+                <option value="1955">1955年</option>
+                <option value="1956">1956年</option>
+                <option value="1957">1957年</option>
+                <option value="1958">1958年</option>
+                <option value="1959">1959年</option>
+                <option value="1960">1960年</option>
+                <option value="1961">1961年</option>
+                <option value="1962">1962年</option>
+                <option value="1963">1963年</option>
+                <option value="1964">1964年</option>
+                <option value="1965">1965年</option>
+                <option value="1966">1966年</option>
+                <option value="1967">1967年</option>
+                <option value="1968">1968年</option>
+                <option value="1969">1969年</option>
+                <option value="1970">1970年</option>
+                <option value="1971">1971年</option>
+                <option value="1972">1972年</option>
+                <option value="1973">1973年</option>
+                <option value="1974">1974年</option>
+                <option value="1975">1975年</option>
+                <option value="1976">1976年</option>
+                <option value="1977">1977年</option>
+                <option value="1978">1978年</option>
+                <option value="1979">1979年</option>
+                <option value="1980">1980年</option>
+                <option value="1981">1981年</option>
+                <option value="1982">1982年</option>
+                <option value="1983">1983年</option>
+                <option value="1984">1984年</option>
+                <option value="1985">1985年</option>
+                <option value="1986">1986年</option>
+                <option value="1987">1987年</option>
+                <option value="1988">1988年</option>
+                <option value="1989">1989年</option>
+                <option value="1990">1990年</option>
+                <option value="1991">1991年</option>
+                <option value="1992">1992年</option>
+                <option value="1993">1993年</option>
+                <option value="1994">1994年</option>
+                <option value="1995">1995年</option>
+                <option value="1996">1996年</option>
+                <option value="1997">1997年</option>
+                <option value="1998">1998年</option>
+                <option value="1999">1999年</option>
+                <option value="2000">2000年</option>
+                <option value="2001">2001年</option>
+                <option value="2002">2002年</option>
+                <option value="2003">2003年</option>
+                <option value="2004">2004年</option>
+                <option value="2005">2005年</option>
+                <option value="2006">2006年</option>
+                <option value="2007">2007年</option>
+                <option value="2008">2008年</option>
+                <option value="2009">2009年</option>
+                <option value="2010">2010年</option>
+                <option value="2011">2011年</option>
+                <option value="2012">2012年</option>
+                <option value="2013">2013年</option>
+                <option value="2014">2014年</option>
+                <option value="2015">2015年</option>
+                <option value="2016">2016年</option>
+                <option value="2017">2017年</option>
+                <option value="2018">2018年</option>
+                <option value="2019">2019年</option>
+                <option value="2020">2020年</option>
+                <option value="2021">2021年</option>
+
+            </select>
+            <select name="month" id="month">
+                <option value="">月</option>
+                <option value="01">1月</option>
+                <option value="02">2月</option>
+                <option value="03">3月</option>
+                <option value="04">4月</option>
+                <option value="05">5月</option>
+                <option value="06">6月</option>
+                <option value="07">7月</option>
+                <option value="08">8月</option>
+                <option value="09">9月</option>
+                <option value="10">10月</option>
+                <option value="11">11月</option>
+                <option value="12">12月</option>
+            </select>
+            <select name="date" id="date">
+                <option value="">日</option>
+                <option value="01">1日</option>
+                <option value="02">2日</option>
+                <option value="03">3日</option>
+                <option value="04">4日</option>
+                <option value="05">5日</option>
+                <option value="06">6日</option>
+                <option value="07">7日</option>
+                <option value="08">8日</option>
+                <option value="09">9日</option>
+                <option value="10">10日</option>
+                <option value="11">11日</option>
+                <option value="12">12日</option>
+                <option value="13">13日</option>
+                <option value="14">14日</option>
+                <option value="15">15日</option>
+                <option value="16">16日</option>
+                <option value="17">17日</option>
+                <option value="18">18日</option>
+                <option value="19">19日</option>
+                <option value="20">20日</option>
+                <option value="21">21日</option>
+                <option value="22">22日</option>
+                <option value="23">23日</option>
+                <option value="24">24日</option>
+                <option value="25">25日</option>
+                <option value="26">26日</option>
+                <option value="27">27日</option>
+                <option value="28">28日</option>
+                <option value="29">29日</option>
+                <option value="30">30日</option>
+                <option value="31">31日</option>
+            </select>
+        </div>
+        <div class="top-fortune_submit"><button>占う</button></div>
+        <div class="top-fortune_adjectives1">あなたは、<span id="adjective1"></span>人間です。</div>
+        <div class="top-fortune_adjectives2">そして、<span id="adverb"></span><span id="adjective2"></span>人生であるといえます。</div>
+    </div>
+    <script>
+        jQuery(function($) {
+            const adjectives1 = [
+                    "ハンサムな", "綺麗な", "静かな", "賑やかな", "有名な", "親切な", "元気な", "暇な", "便利な", "素適な", "好きな", "嫌いな", "上手な", "下手な", "色々な", "簡単な", "大変な", "大切な", "大丈夫な", "無理な", "不便な", "無駄な", "大好きな", "不思議な", "自由な", "真面目な", "熱心な", "心配な", "十分な", "駄目な", "楽な", "特別な", "豪華な", "複雑な", "邪魔な", "必要な", "危険な", "真っ白な", "丈夫な", "変な", "幸せな", "適当な", "安全な", "丁寧な", "嫌な"
+                ],
+                adjectives2 = [
+                    "あくどい", "かなわない", "せわしない", "浅ましい", "芳しい", "そっけない", "あっけない", "気まずい", "たやすい", "あらっぽい", "たわいない", "著しい", "気難しい", "手強い", "愛しい", "義理堅い", "照れくさい", "否めない", "くすぐったい", "尊い／貴い", "卑しい", "計算高い", "途方もない", "いやらしい", "汚らわしい", "乏しい", "後ろめたい", "嘆かわしい", "疑わしい", "心地よい", "名残惜しい", "うっとおしい", "心強い", "疎い", "心細い", "情け深い", "奥深い", "快い", "名高い", "押し付けがましい", "好ましい", "何気ない", "おっかない", "生々しい", "おびただしい", "しぶとい", "生温い", "おぼつかない", "じれったい", "悩ましい", "重苦しい", "しんどい", "馴れ馴れしい", "思わしい", "辛抱強い", "憎たらしい", "輝かしい", "すがすがしい", "妬ましい", "かしましい", "すさまじい", "粘り強い", "堅苦しい", "すばしっこい", "望ましい", "かつてない", "切ない", "儚い", "ばかばかしい", "待ち遠しい", "物足りない", "計り知れない", "回りくどい", "脆い", "華々しい", "真ん丸い", "安っぽい", "見苦しい", "ややこしい", "腹立たしい", "みすぼらしい", "ゆゆしい", "みずみずしい", "欲深い", "久しい", "未練がましい", "理屈っぽい", "平たい", "空しい", "わざとらしい", "古めかしい", "目覚しい", "煩わしい", "紛らわしい", "目まぐるしい", "青白い", "きめ細かい", "でかい", "飽きっぽい", "恋しい", "とんでもない", "厚かましい", "情けない", "危うい", "生臭い", "渋い", "肌寒い", "淡い", "ずうずうしい", "甚だしい", "素早い", "等しい", "勇ましい", "鋭い", "相応しい", "意地悪い", "水っぽい", "薄明るい", "そそっかしい", "逞しい", "やむを得ない", "おめでたい", "頼もしい", "用心深い", "頼りない", "弱々しい", "思いもよらない", "若々しい", "限りない", "汗臭い", "惜しい", "怪しい", "薄暗い", "粗い", "荒い", "思いがけない", "ありがたい", "えらい", "賢い", "慌ただしい", "幼い", "かっこいい", "かっこ悪い", "激しい", "我慢強い", "しつこい", "細長い", "痒い", "図々しい", "貧しい", "真っ黒い", "可愛らしい", "すまない", "真っ白い", "ずるい", "眩しい", "清い", "騒々しい", "みっともない", "くだらない", "だらしない", "醜い", "くどい", "力強い", "悔しい", "めでたい", "苦しい", "憎い", "面倒くさい", "黒っぽい", "憎らしい", "申し訳ない", "鈍い（にぶい）", "煙たい", "ものすごい", "険しい", "眠たい", "やかましい", "鈍い（のろい）", "緩い", "騒がしい", "ばからしい", "喜ばしい", "浅い", "固い", "細かい", "堅い", "正しい", "うまい", "羨ましい", "偉い", "恐ろしい", "大人しい", "重たい", "硬い", "悲しい", "きつい", "厳しい", "臭い", "詳しい", "煙い", "塩辛い", "四角い", "仕方ない", "親しい", "しょうがない", "だるい", "茶色い", "つらい", "懐かしい", "恥ずかしい", "幅広い", "ひどい", "珍しい", "優しい", "軟らかい", "深い", "もったいない", "柔らかい", "よろしい", "青い", "大きい", "少ない", "低い", "赤い", "おかしい", "すごい", "広い", "明るい", "遅い", "涼しい", "太い", "暖かい", "温かい", "重い", "酸っぱい", "古い", "新しい", "面白い", "素晴らしい", "欲しい", "暑い", "辛い（からい）", "白い", "狭い", "細い", "熱い", "軽い", "高い", "まずい", "厚い", "可愛い", "楽しい", "丸い", "危ない", "黄色い", "小さい", "短い", "甘い", "汚い", "強い", "蒸し暑い", "良い", "暗い", "遠い", "難しい", "忙しい", "速い", "黒い", "無い", "易しい", "痛い", "濃い", "長い", "安い", "薄い", "怖い", "苦い", "美しい", "寂しい", "温い", "弱い", "うるさい", "寒い", "眠い", "若い", "嬉しい", "しょっぱい", "早い", "悪い", "多い"
+                ],
+                adverbs = ["かなり", "少々", "まぁまぁ", "とんでもなく"]
+            $year = $('#year'),
+                $month = $('#month'),
+                $date = $('#date'),
+                $submit = $('.top-fortune_submit'),
+                rate = 2319;
+
+            const timer = (time) =>
+                new Promise((resolve) => {
+                    setTimeout(resolve, time);
+                });
+            $submit.on('click', async () => {
+                if (!$year.val() || !$month.val() || !$date.val()) {
+                    window.alert('未入力の項目があります。')
+                    return;
+                }
+                $('.top-fortune_adjectives1').hide();
+                $('.top-fortune_adjectives2').hide();
+                const birthday = $year.val() + $month.val() + $date.val(),
+                    id = parseInt(birthday) * rate,
+                    adjective1 = adjectives1[id % adjectives1.length],
+                    adjective2 = adjectives2[id % adjectives2.length],
+                    adverb = adverbs[id % adverbs.length];
+                $('#adjective1').text(adjective1);
+                $('#adjective2').text(adjective2);
+                $('#adverb').text(adverb);
+                await timer(500);
+                $('.top-fortune_adjectives1').fadeIn();
+                await timer(1500);
+                $('.top-fortune_adjectives2').fadeIn();
+            });
+        });
+    </script>
+</body>
+
+</html>
